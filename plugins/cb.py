@@ -27,6 +27,7 @@ async def button(client, message):
             text="Hello {}\n\n I am YouTube uploader and song recogniser.".format(message.from_user.mention),
             reply_markup=InlineKeyboardMarkup(rsr3),
             parse_mode='html'
+        )
     elif cb_data == "help":
         rsr4 = [[
             InlineKeyboardButton("Back", callback_data="stut")
@@ -37,6 +38,7 @@ async def button(client, message):
             text="*Private:*\n\n● Send me song name or YouTube link, i will download and upload for you.\n● Send me Video or Audio, i will recognise.\n\n*Group:*\n\n● Send me song name or YouTube video link after command, command is /down\n*Example:*\n/down Marshmello - Alone\nor\n/down https://youtu.be/ALZHF5UqnU4\n\n● Send me Video or Audio. Then, reply your vedio/audio with command, command is /audify.",
             reply_markup=reply2,
             parse_mode='html'
+        )
     if cb_data == "about":
         await message.answer("""
 ● 𝗛𝗺𝗶𝗻𝗴: MZup Bot
