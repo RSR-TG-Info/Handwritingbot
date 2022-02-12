@@ -32,7 +32,7 @@ async def help_user(client, message):
         ]]
     await client.send_message(
         chat_id=message.chat.id,
-        text=Translation.HELP_USER,
+        text="i'm here",
         reply_markup=InlineKeyboardMarkup(rsr1),
         parse_mode="markdown",
         reply_to_message_id=message.message_id
@@ -44,7 +44,7 @@ async def start(client, message):
     await AddUser(client, message)
     await client.send_message(
         chat_id=message.chat.id,
-        text=Translation.START_TEXT.format(update.from_user.mention),
+        text="Hello {}".format(update.from_user.mention),
         reply_markup=ReplyKeyboardMarkup(
             [
                 ["Tutorial"],
