@@ -1,9 +1,10 @@
+# ©️2022 RSR
 from pyrogram import filters
-from pyrogram import Client as Clinton
+from pyrogram import Client as RSR
 from sample_config import Config
 
 
-@Clinton.on_message(filters.command('feedback'))
+@RSR.on_message(filters.command('feedback'))
 async def report(client, message):
         if message.reply_to_message:
             await client.send_message(chat_id=Config.OWNER_ID, text=f"<b>⭕️Feedback⭕️\n \n🧿 Name: {message.from_user.mention}\n🧿 ID:</b> <code>{message.chat.id}</code>")
