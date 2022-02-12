@@ -15,27 +15,27 @@ async def button(client, message):
             InlineKeyboardButton("Help", callback_data="help"),
             ],[
             InlineKeyboardButton("Support", url="https://t.me/helptereuhte"),
-            InlineKeyboardButton("Channel", url="https://t.me/rsrbots"),
+            InlineKeyboardButton("Channel", url="https://t.me/rsrbots")
             ],[
             [
             InlineKeyboardButton("About", callback_data="about"),
-            InlineKeyboardButton("Developer", user_id="1060318977"),
+            InlineKeyboardButton("Developer", user_id="1060318977")
         ]]
-        reply_markup = InlineKeyboardMarkup(rsr3)
+        reply = InlineKeyboardMarkup(rsr3)
         await message.answer()
         await message.message.edit_text(
             text="Hello {}\n\n I am YouTube uploader and song recogniser.".format(message.from_user.mention),
-            reply_markup=reply_markup,
+            reply_markup=reply,
             parse_mode='html'
     if cb_data == "help":
         rsr4 = [[
-            InlineKeyboardButton("Back", callback_data="start"),
+            InlineKeyboardButton("Back", callback_data="start")
         ]]
-        reply_markup = InlineKeyboardMarkup(rsr4)
+        reply2 = InlineKeyboardMarkup(rsr4)
         await message.answer()
         await message.message.edit_text(
             text="*Private:*\n\n● Send me song name or YouTube link, i will download and upload for you.\n● Send me Video or Audio, i will recognise.\n\n*Group:*\n\n● Send me song name or YouTube video link after command, command is /down\n*Example:*\n/down Marshmello - Alone\nor\n/down https://youtu.be/ALZHF5UqnU4\n\n● Send me Video or Audio. Then, reply your vedio/audio with command, command is /audify.",
-            reply_markup=reply_markup,
+            reply_markup=reply2,
             parse_mode='html'
     if cb_data == "about":
         await message.answer("""
