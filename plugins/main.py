@@ -39,7 +39,7 @@ async def help_user(client, message):
     )
 
 
-@Clinton.on_message(filters.command(["start"]))
+@RSR.on_message(filters.command(["start"]))
 async def start(client, message):
     await AddUser(client, message)
     await client.send_message(
