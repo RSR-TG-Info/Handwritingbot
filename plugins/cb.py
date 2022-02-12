@@ -12,7 +12,7 @@ async def button(client, message):
         await message.answer("Zawn rei anih viau chuan i link rawn dah hi ka support lo tihna", show_alert=True)
     if cb_data == "start":
         rsr3 = [[
-            InlineKeyboardButton("Help", callback_data="help"),
+            InlineKeyboardButton("Help", callback_data="help")
             ],[
             InlineKeyboardButton("Support", url="https://t.me/helptereuhte"),
             InlineKeyboardButton("Channel", url="https://t.me/rsrbots")
