@@ -1,20 +1,20 @@
 
-# (c) @AbirHasan2005 | Modifieded By : @DC4_WARRIOR
+# ©️2022 RSR
 import speedtest
 import traceback
 import os
 from pyrogram.types import Message
-from pyrogram import Client as Clinton
+from pyrogram import Client as RSR
 from pyrogram import filters
 
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
 else:
     from config import Config
-from database.access import clinton
+from database.imm import rsr
 
-@Clinton.on_message(filters.private & filters.command('total'))
-async def sts(c, m):
+@RSR.on_message(filters.command('users'))
+async def stats(c, m):
     if m.from_user.id != Config.OWNER_ID:
         return 
     total_users = await clinton.total_users_count()
@@ -24,9 +24,9 @@ async def sts(c, m):
     
 
     
-@Clinton.on_message(filters.command('speedtest'))   
-async def spee_test(c, m):
-    ms_g = await m.reply_text("`Processing`")
+@RSR.on_message(filters.command('speedtest'))   
+async def speedtest(c, m):
+    msg = await m.reply_text("`Processing...`")
     s = speedtest.Speedtest()
     s.get_best_server()
     s.download()
@@ -60,7 +60,7 @@ async def spee_test(c, m):
             text=_neat_test,
             parse_mode="html"
             )
-    await ms_g.delete()
+    await msg.delete()
   
 
 
