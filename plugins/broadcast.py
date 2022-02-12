@@ -2,7 +2,7 @@
 # ©️2022 RSR
 
 import traceback, datetime, asyncio, string, random, time, os
-from database.access import rsr
+from database.imm import rsr
 from pyrogram import filters
 from pyrogram import Client as RSR
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
