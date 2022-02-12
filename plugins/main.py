@@ -42,7 +42,7 @@ async def help_user(client, message):
 async def start(client, message):
     await AddUser(client, message)
     rsr2 = [[
-            InlineKeyboardButton("Help", callback_data="help"),
+            InlineKeyboardButton("Help", callback_data="help")
             ],[
             InlineKeyboardButton("Support", url="https://t.me/helptereuhte"),
             InlineKeyboardButton("Channel", url="https://t.me/rsrbots")
