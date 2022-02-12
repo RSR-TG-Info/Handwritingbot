@@ -7,7 +7,7 @@ from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 
-async def ForceSub(client: Client, message: Message):
+async def ForceSub(client, message):
     """
     Custom Pyrogram Based Telegram Bot's Force Subscribe Function by @rsrmusic.
     If User is not Joined Force Sub Channel Bot to Send a Message & ask him to Join First.
