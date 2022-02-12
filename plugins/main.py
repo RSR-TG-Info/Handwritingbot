@@ -31,7 +31,7 @@ async def help_user(client, message):
         ]]
     await client.send_message(
         chat_id=message.chat.id,
-        text="*Private:*\n\n● Send me song name or YouTube link, i will download and upload for you.\n● Send me Video or Audio, i will recognise.\n\n*Group:*\n\n● Send me song name or YouTube video link after command, command is /down\n*Example:*\n/down Marshmello - Alone\nor\n/down `https://youtu.be/ALZHF5UqnU4`\n\n● Send me Video or Audio. Then, reply your vedio/audio with command, command is /audify.",
+        text="**Private:**\n\n● Send me song name or YouTube link, i will download and upload for you.\n● Send me Video or Audio, i will recognise.\n\n**Group:**\n\n● Send me song name or YouTube video link after command, command is /down\n**Example:**\n/down Marshmello - Alone\nor\n/down `https://youtu.be/ALZHF5UqnU4`\n\n● Send me Video or Audio. Then, reply your vedio/audio with command, command is /audify.",
         reply_markup=InlineKeyboardMarkup(rsr1),
         parse_mode="markdown",
         reply_to_message_id=message.message_id
@@ -52,7 +52,7 @@ async def start(client, message):
         ]]
     await client.send_message(
         chat_id=message.chat.id,
-        text="Hello {}\n\n I am YouTube uploader and song recogniser.".format(message.from_user.mention),
+        text="Hello {}\n\nI am YouTube uploader and song recogniser.".format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(rsr2),
         reply_to_message_id=message.message_id
     )
