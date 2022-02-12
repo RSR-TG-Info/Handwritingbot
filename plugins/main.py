@@ -41,7 +41,7 @@ async def start(client, message):
     await AddUser(client, message)
     await client.send_message(
         chat_id=message.chat.id,
-        text="Hello {}".format(update.from_user.mention),
+        text="Hello {}".format(message.from_user.mention),
         reply_markup=ReplyKeyboardMarkup(
             [
                 ["Tutorial"],
