@@ -29,7 +29,7 @@ async def button(client, message):
             parse_mode='html'
     if cb_data == "help":
         rsr4 = [[
-            InlineKeyboardButton("Back", callback_data="help"),
+            InlineKeyboardButton("Back", callback_data="start"),
         ]]
         reply_markup = InlineKeyboardMarkup(rsr4)
         await message.answer()
@@ -37,4 +37,11 @@ async def button(client, message):
             text="*Private:*\n\n● Send me song name or YouTube link, i will download and upload for you.\n● Send me Video or Audio, i will recognise.\n\n*Group:*\n\n● Send me song name or YouTube video link after command, command is /down\n*Example:*\n/down Marshmello - Alone\nor\n/down https://youtu.be/ALZHF5UqnU4\n\n● Send me Video or Audio. Then, reply your vedio/audio with command, command is /audify.",
             reply_markup=reply_markup,
             parse_mode='html'
+    if cb_data == "about":
+        await message.answer("""
+● 𝗛𝗺𝗶𝗻𝗴: Mizo Movies
+● 𝗦𝗶𝗮𝗺𝘁𝘂: RSR
+● 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: 1.1
+● 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲: Mongo DB
+""", show_alert=True)
     
