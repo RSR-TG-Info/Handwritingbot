@@ -28,13 +28,13 @@ async def button(client, message):
             reply_markup=reply_markup,
             parse_mode='html'
     if cb_data == "help":
-        rsr3 = [[
+        rsr4 = [[
             InlineKeyboardButton("Back", callback_data="help"),
         ]]
-        reply_markup = InlineKeyboardMarkup(rsr3)
+        reply_markup = InlineKeyboardMarkup(rsr4)
         await message.answer()
         await message.message.edit_text(
-            text="Hello {}\n\n I am YouTube uploader and song recogniser.".format(message.from_user.mention),
+            text="*Private:*\n\n● Send me song name or YouTube link, i will download and upload for you.\n● Send me Video or Audio, i will recognise.\n\n*Group:*\n\n● Send me song name or YouTube video link after command, command is /down\n*Example:*\n/down Marshmello - Alone\nor\n/down https://youtu.be/ALZHF5UqnU4\n\n● Send me Video or Audio. Then, reply your vedio/audio with command, command is /audify.",
             reply_markup=reply_markup,
             parse_mode='html'
     
