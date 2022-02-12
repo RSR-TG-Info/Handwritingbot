@@ -50,5 +50,5 @@ async def start(client, message):
             ],
             resize_keyboard=True
         ),
-        reply_to_message_id=update.message_id
+        reply_to_message_id=message.message_id
     )
