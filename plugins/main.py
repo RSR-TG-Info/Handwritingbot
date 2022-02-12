@@ -27,7 +27,7 @@ async def help_user(client, message):
     rsr1 = [[
             InlineKeyboardButton("Support", url="https://t.me/helptereuhte"),
             ],[
-            InlineKeyboardButton("Channel", url="https://t.me/rsrbots"),
+            InlineKeyboardButton("Channel", url="https://t.me/rsrbots")
         ]]
     await client.send_message(
         chat_id=message.chat.id,
@@ -45,11 +45,11 @@ async def start(client, message):
             InlineKeyboardButton("Help", callback_data="help"),
             ],[
             InlineKeyboardButton("Support", url="https://t.me/helptereuhte"),
-            InlineKeyboardButton("Channel", url="https://t.me/rsrbots"),
+            InlineKeyboardButton("Channel", url="https://t.me/rsrbots")
             ],[
             [
             InlineKeyboardButton("About", callback_data="about"),
-            InlineKeyboardButton("Developer", user_id="1060318977"),
+            InlineKeyboardButton("Developer", user_id="1060318977")
         ]]
     await client.send_message(
         chat_id=message.chat.id,
