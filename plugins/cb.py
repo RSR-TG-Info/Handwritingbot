@@ -1,6 +1,6 @@
 # ©️2022 RSR
 from pyrogram import Client as RSR
-
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 @RSR.on_callback_query()
 async def button(client, message):
@@ -8,9 +8,9 @@ async def button(client, message):
     cb_data = update.data
     if cb_data == "close":
         await message.message.delete()
-    if cb_data == "hriattur":
+    elif cb_data == "hriattur":
         await message.answer("Zawn rei anih viau chuan i link rawn dah hi ka support lo tihna", show_alert=True)
-    if cb_data == "start":
+    elif cb_data == "start":
         rsr3 = [[
             InlineKeyboardButton("Help", callback_data="help")
             ],[
@@ -27,7 +27,7 @@ async def button(client, message):
             text="Hello {}\n\n I am YouTube uploader and song recogniser.".format(message.from_user.mention),
             reply_markup=reply,
             parse_mode='html'
-    if cb_data == "help":
+    elif cb_data == "help":
         rsr4 = [[
             InlineKeyboardButton("Back", callback_data="start")
         ]]
