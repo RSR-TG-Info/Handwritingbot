@@ -1,15 +1,15 @@
 
 # (c) @AbirHasan2005 | X-Noid
 
-import traceback, datetime, asyncio, string, random, time, os, aiofiles, aiofiles.os
-from database.access import clinton
+import traceback, datetime, asyncio, string, random, time, os
+from database.access import rsr
 from pyrogram import filters
-from pyrogram import Client as Clinton
+from pyrogram import Client as RSR
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 
 if bool(os.environ.get("WEBHOOK", False)):
-    from sample_config import Config
+    from config import Config
 else:
     from config import Config
 
@@ -32,20 +32,20 @@ async def send_msg(user_id, message):
         return 500, f"{user_id} : {traceback.format_exc()}\n"
         
 
-@Clinton.on_message(filters.private & filters.command('broadcast') & filters.reply)
-async def broadcast_(c, m):
-    if m.from_user.id != Config.OWNER_ID:
+@RSR.on_message(filters.command('broadcast') & filters.reply)
+async def broadcast_(client, message):
+    if message.from_user.id != Config.OWNER_ID:
         return
-    all_users = await clinton.get_all_users()
+    all_users = await rsr.get_all_users()
     
-    broadcast_msg = m.reply_to_message
+    broadcast_msg = message.reply_to_message
     
     while True:
         broadcast_id = ''.join([random.choice(string.ascii_letters) for i in range(3)])
         if not broadcast_ids.get(broadcast_id):
             break
     
-    out = await m.reply_text(
+    out = await message.reply_text(
         text = f"Broadcast initiated! You will be notified with log file when all the users are notified."
     )
     start_time = time.time()
@@ -77,7 +77,7 @@ async def broadcast_(c, m):
                 failed += 1
             
             if sts == 400:
-                await clinton.delete_user(user['id'])
+                await rsr.delete_user(user['id'])
             
             done += 1
             if broadcast_ids.get(broadcast_id) is None:
@@ -99,12 +99,12 @@ async def broadcast_(c, m):
     await out.delete()
     
     if failed == 0:
-        await m.reply_text(
+        await message.reply_text(
             text=f"broadcast completed in `{completed_in}`\n\nTotal users {total_users}.\nTotal done {done}, {success} success and {failed} failed.",
             quote=True
         )
     else:
-        await m.reply_document(
+        await message.reply_document(
             document='broadcast.txt',
             caption=f"broadcast completed in `{completed_in}`\n\nTotal users {total_users}.\nTotal done {done}, {success} success and {failed} failed.",
             quote=True
