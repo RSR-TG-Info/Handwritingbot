@@ -1,13 +1,13 @@
-# (c) @AbirHasan2005
+# ©️2022 RSR
 
 import asyncio
-from sample_config import Config
-from pyrogram import Client
+from config import Config
+from pyrogram import Client as RSR
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 
-async def ForceSub(bot: Client, update: Message):
+async def ForceSub(client: Client, message: Message):
     """
     Custom Pyrogram Based Telegram Bot's Force Subscribe Function by @rsrmusic.
     If User is not Joined Force Sub Channel Bot to Send a Message & ask him to Join First.
@@ -18,31 +18,31 @@ async def ForceSub(bot: Client, update: Message):
     """
     
     try:
-        invite_link = await bot.create_chat_invite_link(chat_id=(int(Config.UPDATES_CHANNEL) if Config.UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL))
+        invite_link = await client.create_chat_invite_link(chat_id=(int(Config.UPDATES_CHANNEL) if Config.UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL))
     except FloodWait as e:
         await asyncio.sleep(e.x)
-        fix_ = await ForceSub(bot, update)
+        fix_ = await ForceSub(client, message)
         return fix_
     except Exception as err:
-        print(f"**{Config.UPDATES_CHANNEL} force subscribe ah hian harsatna a awm**")
+        print(f"**{Config.UPDATES_CHANNEL} some error in forcesub**")
         return 200
     try:
-        user = await bot.get_chat_member(chat_id=(int(Config.UPDATES_CHANNEL) if Config.UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL), user_id=update.from_user.id)
+        user = await client.get_chat_member(chat_id=(int(Config.UPDATES_CHANNEL) if Config.UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL), user_id=message.from_user.id)
         if user.status == "kicked":
-            await bot.send_message(
-                chat_id=update.chat.id,
-                text="**A pawi khawp mai min hmang theilo tur a ban ini tlat**",
+            await client.send_message(
+                chat_id=message.chat.id,
+                text="**Sorry, you're banned 🚫**",
                 parse_mode="markdown",
                 disable_web_page_preview=True,
-                reply_to_message_id=update.message_id
+                reply_to_message_id=message.message_id
             )
             return 400
         else:
             return 200
     except UserNotParticipant:
-        await bot.send_message(
-            chat_id=update.chat.id,
-            text="**Min hman i duh chuan a hnuai a** `Join` **tih button khu hmet la channel kha join phawt rawh, channel member te chauh in min hmang thei, i join zawh ah link kha min thawn nawn leh dawn nia.**",
+        await client.send_message(
+            chat_id=message.chat.id,
+            text="**You need to join my channel for use me, click** `Join` **button below**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -51,13 +51,13 @@ async def ForceSub(bot: Client, update: Message):
                 ]
             ),
             parse_mode="markdown",
-            reply_to_message_id=update.message_id
+            reply_to_message_id=message.message_id
         )
         return 400
     except FloodWait as e:
         await asyncio.sleep(e.x)
-        fix_ = await ForceSub(bot, update)
+        fix_ = await ForceSub(client, message)
         return fix_
     except Exception as err:
-        print(f"**Force Subscribe ah thil felhlelh a awm**")
+        print(f"**Some bugs in force sub**")
         return 200
