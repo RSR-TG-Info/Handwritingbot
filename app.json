@@ -40,6 +40,14 @@
       "description": "Your Session Name",
       "value": "MZupbot"
     },
+    "LOG_CHANNEL": {
+      "description": "Log Channel ID",
+      "value": ""
+    },
+    "UPDATES_CHANNEL": {
+      "description": "Update Channel ID",
+      "value": "MZupbot"
+    },
     "BANNED_USERS": {
       "description": "Banned Unwanted members..",
       "value": "",
