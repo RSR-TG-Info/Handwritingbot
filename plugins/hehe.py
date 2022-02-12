@@ -14,19 +14,19 @@ else:
 from database.imm import rsr
 
 @RSR.on_message(filters.command('users'))
-async def stats(c, m):
+async def stats(client, message):
     if m.from_user.id != Config.OWNER_ID:
         return 
-    total_users = await clinton.total_users_count()
-    await m.reply_text(text=f"Total user(s) {total_users}", quote=True)
+    total_users = await rsr.total_users_count()
+    await message.reply_text(text=f"Total user(s) {total_users}", quote=True)
 
 
     
 
     
 @RSR.on_message(filters.command('speedtest'))   
-async def speedtest(c, m):
-    msg = await m.reply_text("`Processing...`")
+async def speedtest(client, message):
+    msg = await message.reply_text("`Processing...`")
     s = speedtest.Speedtest()
     s.get_best_server()
     s.download()
@@ -47,16 +47,16 @@ async def speedtest(c, m):
 ▶ <b>ISP RATING :</b> <code>{client_infos['isprating']}</code>
 ▶ <b>PING TIME :</b> <code>{ping_time}</code>
 """
-    if m.reply_to_message:
-        await c.send_message(
-            m.chat.id,
-            reply_to_message_id=m.message_id,
+    if message.reply_to_message:
+        await client.send_message(
+            message.chat.id,
+            reply_to_message_id=message.message_id,
             text=_neat_test,
             parse_mode="html"
         )
     else:
-        await c.send_message(
-            m.chat.id,
+        await client.send_message(
+            message.chat.id,
             text=_neat_test,
             parse_mode="html"
             )
