@@ -11,7 +11,7 @@ async def button(client, message):
     elif cb_data == "hriattur":
         await message.answer("Zawn rei anih viau chuan i link rawn dah hi ka support lo tihna", show_alert=True)
         return
-    elif cb_data == "start":
+    elif cb_data == "stut":
         rsr3 = [[
             InlineKeyboardButton("Help", callback_data="help")
             ],[
@@ -29,7 +29,7 @@ async def button(client, message):
             parse_mode='html'
     elif cb_data == "help":
         rsr4 = [[
-            InlineKeyboardButton("Back", callback_data="start")
+            InlineKeyboardButton("Back", callback_data="stut")
         ]]
         reply2 = InlineKeyboardMarkup(rsr4)
         await message.answer()
