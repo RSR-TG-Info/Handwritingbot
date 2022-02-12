@@ -1,18 +1,12 @@
 {
-  "name": "Uploader X Bot",
-  "description": "Telegram Bot to Upload URLs to Telegram as File and Video.",
+  "name": "MZup Bot",
+  "description": "YouTube ",
   "keywords": [
-    "telegram",
-    "best",
-    "youtube",
-    "downloader",
-    "open",
-    "source",
-    "multi",
-    "purpose",
-    "ffmpeg",
-    "remote",
-    "uploader"
+    "youtube downloader",
+    "telegram bot",
+    "pyrogram bot",
+    "shazam",
+    "shazam bot"
   ],
   "success_url": "https://t.me/Uploader_X_bot",
   "website": "https://github.com/Clinton-Abraham",
