@@ -25,7 +25,7 @@ async def button(client, message):
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.answer()
         await message.message.edit_text(
-            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            text="Hello {}\n\n I am YouTube uploader and song recogniser.".format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
     
