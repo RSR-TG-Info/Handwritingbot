@@ -1,5 +1,5 @@
 
-# (c) @AbirHasan2005 | X-Noid
+# ©️2022 RSR
 
 import traceback, datetime, asyncio, string, random, time, os
 from database.access import rsr
