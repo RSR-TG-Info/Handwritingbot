@@ -31,7 +31,7 @@ async def help_user(client, message):
         ]]
     await client.send_message(
         chat_id=message.chat.id,
-        text="<b>Private:</b>\n\n● Send me song name or YouTube link, i will download and upload for you.\n● Send me Video or Audio, i will recognise.\n\n<b>Group:</b>\n\n● Send me song name or YouTube video link after command, command is /down\n<b>Example:</b>\n/down Marshmello - Alone\nor\n/down <code>https://youtu.be/ALZHF5UqnU4</code>\n\n● Send me Video or Audio. Then, reply your vedio/audio with command, command is /audify.",
+        text="<b>Private:</b>\n\n● Send me song name or YouTube video link, i will download and upload for you.\n● Send me Video or Audio, i will recognise.\n\n<b>Group:</b>\n\n● Send me song name or YouTube video link after command, command is /down\n<b>Example:</b>\n/down Marshmello - Alone\nor\n/down <code>https://youtu.be/ALZHF5UqnU4</code>\n\n● Send me Video or Audio. Then, reply your vedio/audio with command, command is /audify.",
         reply_markup=InlineKeyboardMarkup(rsr1),
         parse_mode="html",
         disable_web_page_preview=True,
@@ -53,7 +53,7 @@ async def start(client, message):
         ]]
     await client.send_message(
         chat_id=message.chat.id,
-        text="Hello {}\n\nI am YouTube uploader and song recogniser.".format(message.from_user.mention),
+        text="Hello {}\n\nI am YouTube uploader and song recogniser Bot. You can download YouTube videos and you can find song using me.".format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(rsr2),
         reply_to_message_id=message.message_id
     )
