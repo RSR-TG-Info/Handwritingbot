@@ -39,9 +39,9 @@ async def button(client, message):
             parse_mode='html'
     if cb_data == "about":
         await message.answer("""
-● 𝗛𝗺𝗶𝗻𝗴: Mizo Movies
-● 𝗦𝗶𝗮𝗺𝘁𝘂: RSR
-● 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: 1.1
+● 𝗛𝗺𝗶𝗻𝗴: MZup Bot
+● 𝗖𝗿𝗲𝗮𝘁𝗼𝗿: RSR
+● 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: 1.0
 ● 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲: Mongo DB
 """, show_alert=True)
     
