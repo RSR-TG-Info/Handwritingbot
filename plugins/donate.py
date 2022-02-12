@@ -1,3 +1,4 @@
+# ©️2022 RSR
 from pyrogram import filters
 from pyrogram import Client as RSR
 
