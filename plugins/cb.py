@@ -5,7 +5,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 @RSR.on_callback_query()
 async def button(client, message):
 
-    cb_data = update.data
+    cb_data = message.data
     if cb_data == "close":
         await message.message.delete()
     elif cb_data == "hriattur":
