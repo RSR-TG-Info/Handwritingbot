@@ -8,7 +8,7 @@ from pyrogram import Client as RSR
 from pyrogram import filters
 
 if bool(os.environ.get("WEBHOOK", False)):
-    from sample_config import Config
+    from config import Config
 else:
     from config import Config
 from database.imm import rsr
