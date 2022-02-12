@@ -18,14 +18,14 @@ async def button(client, message):
             InlineKeyboardButton("Support", url="https://t.me/helptereuhte"),
             InlineKeyboardButton("Channel", url="https://t.me/rsrbots")
             ],[
-            [
             InlineKeyboardButton("About", callback_data="about"),
             InlineKeyboardButton("Developer", user_id="1060318977")
         ]]
+        reply1 = InlineKeyboardMarkup(rsr3)
         await message.answer()
         await message.message.edit_text(
             text="Hello {}\n\n I am YouTube uploader and song recogniser.".format(message.from_user.mention),
-            reply_markup=InlineKeyboardMarkup(rsr3),
+            reply_markup=reply1,
             parse_mode='html'
         )
     elif cb_data == "help":
