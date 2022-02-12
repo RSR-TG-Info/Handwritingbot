@@ -1,4 +1,4 @@
-# (c) @AbirHasan2005 | X-Noid | @DC4_WARRIOR
+# ©️2022 RSR
 
 import datetime
 import motor.motor_asyncio
@@ -7,8 +7,8 @@ class Database:
 
     def __init__(self, uri, database_name):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
-        self.clinton = self._client[database_name]
-        self.col = self.clinton.USERS
+        self.rsr = self._client[database_name]
+        self.col = self.rsr.USERS
 
     def new_user(self, id):
         return dict(id=id, thumbnail=None)
@@ -33,9 +33,4 @@ class Database:
     async def delete_user(self, user_id):
         await self.col.delete_many({'id': int(user_id)})
 
-    async def set_thumbnail(self, id, thumbnail):
-        await self.col.update_one({'id': id}, {'$set': {'thumbnail': thumbnail}})
-
-    async def get_thumbnail(self, id):
-        user = await self.col.find_one({'id': int(id)})
-        return user.get('thumbnail', None)
+    
