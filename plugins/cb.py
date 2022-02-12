@@ -10,6 +10,7 @@ async def button(client, message):
         await message.message.delete()
     elif cb_data == "hriattur":
         await message.answer("Zawn rei anih viau chuan i link rawn dah hi ka support lo tihna", show_alert=True)
+        return
     elif cb_data == "start":
         rsr3 = [[
             InlineKeyboardButton("Help", callback_data="help")
