@@ -24,7 +24,7 @@ async def button(client, message):
         reply1 = InlineKeyboardMarkup(rsr3)
         await message.answer()
         await message.message.edit_text(
-            text="Hello {}\n\n I am YouTube uploader and song recogniser.".format(message.from_user.mention),
+            text="Hello {}\n\nI am YouTube uploader and song recogniser.".format(message.from_user.mention),
             reply_markup=reply1,
             parse_mode='html'
         )
@@ -38,7 +38,7 @@ async def button(client, message):
             text="**Private:**\n\n● Send me song name or YouTube link, i will download and upload for you.\n● Send me Video or Audio, i will recognise.\n\n**Group:**\n\n● Send me song name or YouTube video link after command, command is /down\n**Example:**\n/down Marshmello - Alone\nor\n/down https://youtu.be/ALZHF5UqnU4\n\n● Send me Video or Audio. Then, reply your vedio/audio with command, command is /audify.",
             reply_markup=reply2,
             disable_web_page_preview=True,
-            parse_mode='html'
+            parse_mode='markdown'
         )
     elif cb_data == "about":
         await message.answer("""
