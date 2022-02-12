@@ -1,7 +1,7 @@
 # ©️2022 RSR
 from pyrogram import filters
 from pyrogram import Client as RSR
-from sample_config import Config
+from config import Config
 
 
 @RSR.on_message(filters.command('feedback'))
