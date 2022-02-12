@@ -11,8 +11,8 @@ class Config(object):
     BANNED_USERS = set(int(x) for x in os.environ.get("BANNED_USERS", "").split())
     # your telegram id
     OWNER_ID = int(os.environ.get("OWNER_ID", ""))
-    # database session name, example: xurluploader
-    DATABASE_NAME = os.environ.get("SESSION_NAME", "")
+    # database session name, example: mzupbot
+    DATABASE_NAME = os.environ.get("DATABASE_NAME", "")
     # database uri (mongodb)
     DATABASE_URL = os.environ.get("DATABASE_URL", "")
     #log channel
