@@ -39,7 +39,7 @@ async def button(client, message):
             reply_markup=reply2,
             parse_mode='html'
         )
-    if cb_data == "about":
+    elif cb_data == "about":
         await message.answer("""
 ● 𝗛𝗺𝗶𝗻𝗴: MZup Bot
 ● 𝗖𝗿𝗲𝗮𝘁𝗼𝗿: RSR
