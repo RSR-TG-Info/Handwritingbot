@@ -47,7 +47,6 @@ async def start(client, message):
             InlineKeyboardButton("Support", url="https://t.me/helptereuhte"),
             InlineKeyboardButton("Channel", url="https://t.me/rsrbots")
             ],[
-            [
             InlineKeyboardButton("About", callback_data="about"),
             InlineKeyboardButton("Developer", user_id="1060318977")
         ]]
