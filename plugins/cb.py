@@ -59,7 +59,7 @@ async def forceclose(_, CallbackQuery):
     await CallbackQuery.message.delete()
     await CallbackQuery.answer()
 
-@app.on_callback_query(filters.regex("forceclosed"))
+@RSR.on_callback_query(filters.regex("forceclosed"))
 async def forceclose(_, CallbackQuery):
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
