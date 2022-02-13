@@ -7,7 +7,6 @@ from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
 from youtube_search import YoutubeSearch
 
 from pyrogram import Client as RSR
-from Yukki.Decorators.permission import PermissionCheck
 from Yukki.Inline import song_download_markup, song_markup
 from Yukki.Utilities.url import get_url
 from Yukki.Utilities.youtube import get_yt_info_query, get_yt_info_query_slider
@@ -15,7 +14,7 @@ from Yukki.Utilities.youtube import get_yt_info_query, get_yt_info_query_slider
 loop = asyncio.get_event_loop()
 
 
-@RSR.on_message(filters.command(["song", f"song@{BOT_USERNAME}"]))
+@RSR.on_message(filters.private & filters.text))
 async def play(client, message):
     if message.chat.type == "private":
         pass
@@ -25,8 +24,8 @@ async def play(client, message):
         pass
     url = get_url(message)
     if url:
-        mystic = await client.send_message(message.chai.id, text="Processing URL... Please Wait!")
-        query = message.text.split(None, 1)[1]
+        mystic = await client.send_message(message.chai.id, text="Processing URL... Please Wait!", reply_to_message_id=message.message_id)
+        query = message.text
         (
             title,
             duration_min,
@@ -38,19 +37,16 @@ async def play(client, message):
             return await mystic.edit("Sorry! Its a Live Video")
         await mystic.delete()
         buttons = song_download_markup(videoid, message.from_user.id)
-        return await message.reply_photo(
+        return await client.send_photo(
+            message.chat.id,
             photo=thumb,
             caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
+            reply_to_message_id=message.message_id
         )
-    else:
-        if len(message.command) < 2:
-            await message.reply_text(
-                "**Usage:**\n\n/song [Youtube Url or Music Name]\n\nDownloads the Particular Query."
-            )
-            return
-        mystic = await message.reply_text("🔍 Searching Your Query...")
-        query = message.text.split(None, 1)[1]
+        return
+        mystic = await client.send_message(message.chat.id, text="🔍 Searching Your Query...", reply_to_message_id=message.message_id)
+        query = message.text
         (
             title,
             duration_min,
@@ -64,14 +60,16 @@ async def play(client, message):
         buttons = song_markup(
             videoid, duration_min, message.from_user.id, query, 0
         )
-        return await message.reply_photo(
+        return await client.send_photo(
+            message.chat.id,
             photo=thumb,
             caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins\n\n__[Get Additional Information About Video](https://t.me/{BOT_USERNAME}?start=info_{videoid})__",
             reply_markup=InlineKeyboardMarkup(buttons),
+            reply_to_message_id=message.message_id
         )
 
 
-@app.on_callback_query(filters.regex("qwertyuiopasdfghjkl"))
+@RSR.on_callback_query(filters.regex("qwertyuiopasdfghjkl"))
 async def qwertyuiopasdfghjkl(_, CallbackQuery):
     print("234")
     await CallbackQuery.answer()
@@ -85,16 +83,11 @@ async def qwertyuiopasdfghjkl(_, CallbackQuery):
     )
 
 
-@app.on_callback_query(filters.regex(pattern=r"song_right"))
+@RSR.on_callback_query(filters.regex(pattern=r"song_right"))
 async def song_right(_, CallbackQuery):
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
     what, type, query, user_id = callback_request.split("|")
-    if CallbackQuery.from_user.id != int(user_id):
-        return await CallbackQuery.answer(
-            "Search Your Own Music. You're not allowed to use this button.",
-            show_alert=True,
-        )
     what = str(what)
     type = int(type)
     if what == "F":
@@ -102,7 +95,7 @@ async def song_right(_, CallbackQuery):
             query_type = 0
         else:
             query_type = int(type + 1)
-        await CallbackQuery.answer("Getting Next Result", show_alert=True)
+        await CallbackQuery.answer()
         (
             title,
             duration_min,
@@ -127,7 +120,7 @@ async def song_right(_, CallbackQuery):
             query_type = 9
         else:
             query_type = int(type - 1)
-        await CallbackQuery.answer("Getting Previous Result", show_alert=True)
+        await CallbackQuery.answer()
         (
             title,
             duration_min,
