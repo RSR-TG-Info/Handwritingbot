@@ -33,7 +33,7 @@ async def play(client, message):
         return await client.send_photo(
             message.chat.id,
             photo=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins.,
+            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins.",
             reply_markup=InlineKeyboardMarkup(buttons),
             reply_to_message_id=message.message_id
         )
@@ -101,7 +101,7 @@ async def song_right(_, CallbackQuery):
         )
         med = InputMediaPhoto(
             media=thumb,
-            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins.,
+            caption=f"📎Title: **{title}\n\n⏳Duration:** {duration_min} Mins.",
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
