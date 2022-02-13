@@ -14,7 +14,7 @@ from Yukki.Utilities.youtube import get_yt_info_query, get_yt_info_query_slider
 loop = asyncio.get_event_loop()
 
 
-@RSR.on_message(filters.private & filters.text))
+@RSR.on_message(filters.private & filters.text)
 async def play(client, message):
     if message.chat.type == "private":
         pass
