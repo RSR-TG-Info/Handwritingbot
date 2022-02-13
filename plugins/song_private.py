@@ -35,7 +35,6 @@ async def play(client, message):
         ) = await loop.run_in_executor(None, get_yt_info_query, query)
         if str(duration_min) == "None":
             return await mystic.edit("Sorry! Its a Live Video")
-        await mystic.delete()
         buttons = song_download_markup(videoid, message.from_user.id)
         return await client.send_photo(
             message.chat.id,
@@ -56,7 +55,6 @@ async def play(client, message):
         ) = await loop.run_in_executor(None, get_yt_info_query, query)
         if str(duration_min) == "None":
             return await mystic.edit("Sorry! Its a Live Video")
-        await mystic.delete()
         buttons = song_markup(
             videoid, duration_min, message.from_user.id, query, 0
         )
