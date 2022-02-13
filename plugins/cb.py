@@ -1,6 +1,8 @@
 # ©️2022 RSR
 from pyrogram import Client as RSR
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram import filters
+
 
 @RSR.on_callback_query()
 async def button(client, message):
