@@ -16,12 +16,6 @@ loop = asyncio.get_event_loop()
 
 @RSR.on_message(filters.private & filters.text)
 async def play(client, message):
-    if message.chat.type == "private":
-        pass
-    try:
-        await message.delete()
-    except:
-        pass
     url = get_url(message)
     if url:
         mystic = await client.send_message(message.chai.id, text="Processing URL... Please Wait!", reply_to_message_id=message.message_id)
