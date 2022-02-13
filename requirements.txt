@@ -9,3 +9,4 @@ dnspython
 wget
 hachoir
 pillow
+youtube-search-python
