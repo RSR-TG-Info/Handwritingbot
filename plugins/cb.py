@@ -51,22 +51,4 @@ async def button(client, message):
 """, show_alert=True)
         
         
-@RSR.on_callback_query(filters.regex("forceclose"))
-async def forceclose(_, CallbackQuery):
-    callback_data = CallbackQuery.data.strip()
-    callback_request = callback_data.split(None, 1)[1]
-    query, user_id = callback_request.split("|")
-    await CallbackQuery.message.delete()
-    await CallbackQuery.answer()
 
-@RSR.on_callback_query(filters.regex("forceclosed"))
-async def forceclose(_, CallbackQuery):
-    callback_data = CallbackQuery.data.strip()
-    callback_request = callback_data.split(None, 1)[1]
-    query, user_id = callback_request.split("|")
-    if CallbackQuery.from_user.id != int(user_id):
-        return await CallbackQuery.answer(
-            "You're not allowed to close this.", show_alert=True
-        )
-    await CallbackQuery.message.delete()
-    await CallbackQuery.answer()
