@@ -19,7 +19,7 @@ async def play(client, message):
     url = get_url(message)
     if url:
         mystic = await client.send_message(message.chat.id, text="Processing URL... Please Wait!", reply_to_message_id=message.message_id)
-        query = message.text.split(None, 1)[1]
+        query = str(message.text)
         (
             title,
             duration_min,
@@ -39,7 +39,7 @@ async def play(client, message):
         )
         return
         mystic = await client.send_message(message.chat.id, text="🔍 Searching Your Query...", reply_to_message_id=message.message_id)
-        query = message.text.split(None, 1)[1]
+        query = str(message.text)
         (
             title,
             duration_min,
