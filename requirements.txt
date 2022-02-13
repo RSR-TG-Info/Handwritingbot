@@ -10,3 +10,4 @@ wget
 hachoir
 pillow
 youtube-search-python
+youtube-search
