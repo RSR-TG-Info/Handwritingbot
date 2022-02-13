@@ -12,8 +12,8 @@ from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
 from youtubesearchpython import VideosSearch
 
 from pyrogram import Client as RSR
-from RSR.Utilities.changers import time_to_seconds
-from RSR.Utilities.download import get_formats, get_type
+from .changers import time_to_seconds
+from .download import get_formats, get_type
 
 user_time = {}
 flex = {}
