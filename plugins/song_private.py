@@ -7,9 +7,9 @@ from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
 from youtube_search import YoutubeSearch
 
 from pyrogram import Client as RSR
-from RSR.Inline.song import song_download_markup, song_markup
-from RSR.Utilities.url import get_url
-from RSR.Utilities.youtube import get_yt_info_query, get_yt_info_query_slider
+from .song import song_download_markup, song_markup
+from .url import get_url
+from .youtube import get_yt_info_query, get_yt_info_query_slider
 
 loop = asyncio.get_event_loop()
 
