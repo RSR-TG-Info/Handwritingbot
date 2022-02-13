@@ -6,3 +6,4 @@ motor
 asyncio
 speedtest-cli
 dnspython
+wget
