@@ -38,7 +38,7 @@ async def play(client, message):
             reply_markup=InlineKeyboardMarkup(buttons),
             reply_to_message_id=message.message_id
         )
-   else:
+    else:
         mystic = await client.send_message(message.chat.id, text="🔍 Searching Your Query...", reply_to_message_id=message.message_id)
         query = str(message.text)
         (
