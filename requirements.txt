@@ -7,3 +7,4 @@ asyncio
 speedtest-cli
 dnspython
 wget
+hachoir
