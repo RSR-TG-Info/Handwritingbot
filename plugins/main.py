@@ -18,7 +18,7 @@ from database.adduser import AddUser
 from pyrogram import Client as RSR
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 @RSR.on_message(filters.command(["help"]))
