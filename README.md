@@ -14,3 +14,11 @@ You can deploy to Heroku, other are soon.
 </a>
 </p>
 </details>
+
+## Admin command:
+
+/broadcast - Reply a message (send broadcast messages to users)
+/users - Check total users
+
+## Command:
+/speedtest - Check Bot speed
