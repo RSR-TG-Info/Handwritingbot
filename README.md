@@ -15,7 +15,7 @@ You can deploy to Heroku, other are soon.
 </p>
 </details>
 
-## Admin command:
+## Owner command:
 
 /broadcast - Reply a message (send broadcast messages to users)
 <p>/users - Check total users</p>
