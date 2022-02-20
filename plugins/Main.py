@@ -29,7 +29,7 @@ async def help_user(client, message):
             ]]
     await client.send_message(
         chat_id=message.chat.id,
-        text="Send me a text, i'll convert to Handwriting.",
+        text="Send me a text, I'll convert to Handwriting.",
         reply_markup=InlineKeyboardMarkup(rsr1),
         parse_mode="html",
         disable_web_page_preview=True,
@@ -48,7 +48,7 @@ async def start(client, message):
         ]]
     await client.send_message(
         chat_id=message.chat.id,
-        text="Hello {}\n\nI am Handwriting converter Bot, send me any text, i'll convert to Handwriting.".format(message.from_user.mention),
+        text="Hello {}\n\nI am Handwriting converter Bot, send me any text, I'll convert to Handwriting.".format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(rsr2),
         reply_to_message_id=message.message_id
     )
