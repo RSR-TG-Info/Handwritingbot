@@ -4,7 +4,7 @@
 <a href="https://t.me/MZupbot">Handwriting Bot</a>
 
 ## Deploy
-You can deploy this bot to Heroku, other are soon.
+You can deploy to Heroku, other are soon.
 
 <details><summary>Deploy To Heroku</summary>
 <p>
