@@ -46,7 +46,7 @@
     },
     "UPDATES_CHANNEL": {
       "description": "Update Channel ID",
-      "value": "MZupbot"
+      "value": ""
     },
     "BANNED_USERS": {
       "description": "Banned Unwanted members..",
