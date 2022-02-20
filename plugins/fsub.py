@@ -42,7 +42,7 @@ async def ForceSub(client, message):
     except UserNotParticipant:
         await client.send_message(
             chat_id=message.chat.id,
-            text="After joining my channel you can use me. Tap the join button below",
+            text="After joining my channel you can use me. Tap the join button below😊",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
