@@ -1,4 +1,4 @@
-![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=welcome+To+JISOO's+Repo!;created+by+RAIHAN!;A+simple+SONG+DOWNLOADER+bot!;and+all+futures)</p>
+![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Handwriting+Bot;Made+by+RSR)</p>
 
 
 
