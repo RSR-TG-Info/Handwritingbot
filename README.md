@@ -20,5 +20,3 @@ You can deploy to Heroku, other are soon.
 /broadcast - Reply a message (send broadcast messages to users)
 <p>/users - Check total users</p>
 
-## Command:
-/speedtest - Check Bot speed
