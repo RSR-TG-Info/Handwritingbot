@@ -18,7 +18,7 @@ You can deploy to Heroku, other are soon.
 ## Admin command:
 
 /broadcast - Reply a message (send broadcast messages to users)
-/users - Check total users
+<p>/users - Check total users</p>
 
 ## Command:
 /speedtest - Check Bot speed
