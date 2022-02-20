@@ -1,6 +1,6 @@
 
 # ©️2022 RSR
-import aiofiles
+import aiofiles, aiofiles.os
 import traceback, datetime, asyncio, string, random, time, os
 from database.imm import rsr
 from pyrogram import filters
