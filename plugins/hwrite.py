@@ -11,8 +11,8 @@ from pyrogram.types import User, Message
 
 @RSR.on_message(filters.private & filters.text)
 async def hwrite(client, message):
-    await AddUser(bot, update)
-    FSub = await ForceSub(bot, update)
+    await AddUser(client, message)
+    FSub = await ForceSub(client, message)
     if FSub == 400:
         return
     text = str(message.text)
