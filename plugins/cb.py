@@ -44,7 +44,7 @@ async def button(client, message):
         )
     elif cb_data == "about":
         await message.answer("""
-● 𝗛𝗺𝗶𝗻𝗴: MZup Bot
+● 𝗛𝗺𝗶𝗻𝗴: Handwriting Bot
 ● 𝗖𝗿𝗲𝗮𝘁𝗼𝗿: RSR
 ● 𝗩𝗲𝗿𝘀𝗶𝗼𝗻: 1.0
 ● 𝗗𝗮𝘁𝗮𝗯𝗮𝘀𝗲: Mongo DB
