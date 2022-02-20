@@ -14,9 +14,10 @@ from pyrogram.types import User, Message
 @RSR.on_message(filters.private & filters.text)
 async def hwrite(client, message):
     await AddUser(client, message)
-    FSub = await ForceSub(client, message)
-    if FSub == 400:
-        return
+    # When you need force subscribe your channel, remove #
+    #FSub = await ForceSub(client, message)
+    #if FSub == 400:
+        #return
     text = str(message.text)
     txt = await client.send_message(message.chat.id, text="`Making...`", reply_to_message_id=message.message_id)
     hmm = requests.post('https://api.single-developers.software/write', headers={'Content-Type': 'application/json'}, json={"text":f"{text}"}).history[1].url
