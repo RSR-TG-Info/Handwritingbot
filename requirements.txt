@@ -4,4 +4,4 @@ tgcrypto
 motor
 asyncio
 speedtest-cli
-
+dnspython
