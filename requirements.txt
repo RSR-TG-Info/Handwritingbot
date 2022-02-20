@@ -1,13 +1,7 @@
 Pyrogram
 requests
 tgcrypto
-yt-dlp==2021.11.10.1
 motor
 asyncio
 speedtest-cli
-dnspython
-wget
-hachoir
-pillow
-youtube-search-python
-youtube-search
+
