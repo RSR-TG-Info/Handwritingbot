@@ -1,3 +1,5 @@
+# ©️2022 RSR
+
 import os
 import requests
 from database.adduser import AddUser
