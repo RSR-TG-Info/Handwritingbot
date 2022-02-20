@@ -15,7 +15,7 @@ from database.imm import rsr
 
 @RSR.on_message(filters.command('users'))
 async def stats(client, message):
-    if m.from_user.id != Config.OWNER_ID:
+    if message.from_user.id != Config.OWNER_ID:
         return 
     total_users = await rsr.total_users_count()
     await message.reply_text(text=f"Total user(s) {total_users}", quote=True)
