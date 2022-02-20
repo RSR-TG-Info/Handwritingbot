@@ -14,7 +14,7 @@ from pyrogram.types import User, Message
 @RSR.on_message(filters.private & filters.text)
 async def hwrite(client, message):
     await AddUser(client, message)
-    # When you need force subscribe your channel, remove #
+    # When you need force subscribe your channel, remove #, except this line.
     #FSub = await ForceSub(client, message)
     #if FSub == 400:
         #return
