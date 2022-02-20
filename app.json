@@ -1,16 +1,16 @@
 {
-  "name": "MZup Bot",
-  "description": "YouTube Downloader and Song recogniser Bot",
+  "name": "Handwriting Bot",
+  "description": "Telegram Handwriting converter Bot",
   "keywords": [
-    "youtube downloader",
+    "handwriting",
     "telegram bot",
     "pyrogram bot",
-    "shazam",
-    "shazam bot"
+    "handwriting bot",
+    "telegram handwriting bot"
   ],
-  "success_url": "https://github.com/RSR-TG-Info/MZBot",
+  "success_url": "https://github.com/RSR-TG-Info/Handwritingbot",
   "website": "www.imrsr.online",
-  "repository": "https://github.com/RSR-TG-Info/MZBot",
+  "repository": "https://github.com/RSR-TG-Info/Handwritingbot",
   "env": {
     "WEBHOOK": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode",
