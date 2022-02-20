@@ -5,4 +5,4 @@ motor
 asyncio
 speedtest-cli
 dnspython
-aiofiles
+https://github.com/Tinche/aiofiles/archive/master.zip
