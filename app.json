@@ -33,12 +33,12 @@
       "value": ""
     },
     "DATABASE_URL": {
-      "description": "Your MongoDB URI, get from www.mongodb.com",
+      "description": "Your MongoDB URL, get from www.mongodb.com",
       "value": ""
     },
     "DATABASE_NAME": {
       "description": "Your MongoDB Name, get from www.mongodb.com",
-      "value": "MZupbot"
+      "value": ""
     },
     "LOG_CHANNEL": {
       "description": "Log Channel ID",
