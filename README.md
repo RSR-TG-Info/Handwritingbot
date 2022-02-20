@@ -5,7 +5,7 @@
 
 ## Deploy
 You can deploy to Heroku, other are soon.
-.
+
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
