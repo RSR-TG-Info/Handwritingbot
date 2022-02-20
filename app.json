@@ -33,11 +33,11 @@
       "value": ""
     },
     "DATABASE_URL": {
-      "description": "Your MongoDB URI",
+      "description": "Your MongoDB URI, get from www.mongodb.com",
       "value": ""
     },
     "DATABASE_NAME": {
-      "description": "Your Session Name",
+      "description": "Your MongoDB Name, get from www.mongodb.com",
       "value": "MZupbot"
     },
     "LOG_CHANNEL": {
