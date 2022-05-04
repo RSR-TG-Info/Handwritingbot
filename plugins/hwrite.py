@@ -20,7 +20,7 @@ async def hwrite(client, message):
         #return
     text = str(message.text)
     txt = await client.send_message(message.chat.id, text="`Making...`", reply_to_message_id=message.message_id)
-    hmm = requests.post('https://api.single-developers.software/write', headers={'Content-Type': 'application/json'}, json={"text":f"{text}"}).history[1].url
+    hmm = requests.post('https://host.single-developers.software/write', headers={'Content-Type': 'application/json'}, json={"text":f"{text}"}).history[1].url
     rsrkeyboards = InlineKeyboardMarkup(
         [
             [
