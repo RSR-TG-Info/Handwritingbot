@@ -1,5 +1,7 @@
 import os
 
+
+
 class Config(object):
     # get a token from @BotFather
     TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
@@ -8,7 +10,7 @@ class Config(object):
     API_HASH = os.environ.get("API_HASH")
     # Get these values from my.telegram.org
     # Banned Unwanted Members..
-    BANNED_USERS = set(int(x) for x in os.environ.get("BANNED_USERS", "").split())
+    BANNED_USERS = {int(x) for x in os.environ.get("BANNED_USERS", "").split()}
     # your telegram id
     OWNER_ID = int(os.environ.get("OWNER_ID", ""))
     # database session name, example: mzupbot

@@ -28,17 +28,16 @@ async def ForceSub(client, message):
         return 200
     try:
         user = await client.get_chat_member(chat_id=(int(Config.UPDATES_CHANNEL) if Config.UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL), user_id=message.from_user.id)
-        if user.status == "kicked":
-            await client.send_message(
-                chat_id=message.chat.id,
-                text="**Sorry, you're banned 🚫**",
-                parse_mode="markdown",
-                disable_web_page_preview=True,
-                reply_to_message_id=message.message_id
-            )
-            return 400
-        else:
+        if user.status != "kicked":
             return 200
+        await client.send_message(
+            chat_id=message.chat.id,
+            text="**Sorry, you're banned 🚫**",
+            parse_mode="markdown",
+            disable_web_page_preview=True,
+            reply_to_message_id=message.message_id
+        )
+        return 400
     except UserNotParticipant:
         await client.send_message(
             chat_id=message.chat.id,
@@ -59,5 +58,5 @@ async def ForceSub(client, message):
         fix_ = await ForceSub(client, message)
         return fix_
     except Exception as err:
-        print(f"**Some bugs in force sub**")
+        print("**Some bugs in force sub**")
         return 200
