@@ -1,4 +1,4 @@
-# ©️2022 RSR
+# ©️2022 RSR.
 
 import asyncio
 from config import Config
